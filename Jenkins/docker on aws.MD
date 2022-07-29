@@ -23,7 +23,7 @@ https://www.jenkins.io/download/
 #we need to go inside the docker container
 
  ```sh
- docker container exce -it (containerID) /bin/bash
+ docker container exec -it (containerID) /bin/bash
  cat /var/jenkins_home/secrets/initialAdminPassword
  ```
  
