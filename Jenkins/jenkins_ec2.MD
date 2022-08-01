@@ -25,6 +25,15 @@ sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/
 
  [ec2-user ~]$ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
  
+ #INSTALL GIT ON AWS
+ #Perform a quick update on your instance:
+sudo yum update -y
+ 
+#Install git in your EC2 instance
+sudo yum install git -y
+ 
+#Check git version
+git version
  
  
  ```
