@@ -163,9 +163,61 @@ new_project > free_style > source_code_managment > build trigger > github_hook_t
 SAVE
 
 # then 
-manage_jenkins > configure_system > SSH_Server > add > 
+manage_jenkins > configure_system > SSH_Server > add >
+Name: jenkins
+Hostname jenkins-server_private_ip
+Username root
+> advance use password authentication
+passwd  root
+#enter
+vim /etc/ssh/sshd_config
+
+#shift+I
+#LoginGraceTime 2m
+#PermitRootLogin yes
+PermitRootLogin yes
+#To disable tunneled clear text passwords, change to no here!
+#PasswordAuthentication no
+PasswordAuthentication yes
+Exit Esc+:wq
+#resart 
+systemctl restart sshd
+
+>save and apply
+
+configure > build > send_file_or_excute_commands_over_SSH >exec command
+rsync -avh /var/lib/jenkins/workspace/demo_project_cloudknowldege/*html root@172.31.31.101:/opt/index.html
+# verify 
+on ansible server
+cd /opt/
+ls
+# index.html file will be there
+
+# post build action
+#  configure ansible on jenkins
+   Manage_jenkins > SSH_server > add > 
+   Name Ansible
+   hostName ansible_private_ip
+   Username root
+   advance > usepassword.
+   save and apply
+   
+   
+post_build-action > send_build_artificate_over_SSH
+Ansible > exec_command
+ansible-playbook /sourcecode/playbook.yml
+
 
 
 ```
+#### where jenkins file store
+```sh
+cd /var/lib/jenkins/workspace/demo_project_cloudknowldege
+ls
+# on wrok_space folder 
+# path for the file index.html
+pwd
 
+
+``` 
 
