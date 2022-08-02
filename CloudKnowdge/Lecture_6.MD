@@ -2,6 +2,8 @@
 
 ### 1. jenkins install
 ```sh
+# install git on jenkins
+yum install git* -y
 
 ```
 ### 1. Ansible install
@@ -118,5 +120,52 @@ ssh root@Web_server_private_ip
 exit
 
 
-``
+```
 ### 1. devloper_server install
+
+#### 3. Playbook define on ansible server
+```sh
+#create a folderr
+mkdir /sourcecode
+cd /sourcecode/
+
+vim palybook.yml
+#shift+I
+- host: all
+  task:
+    - copy:
+         src: /opt/index.html
+         # plz follw task 4 git
+         #index.html file== after complie on jenkins , ansible put this compile file on jenkins opt folder
+         dest: /var/www/html
+         #exit
+         esc+:wq
+   ```
+#### 4. git setup
+```sh
+#create new repository
+#create a file name index.html
+
+Now integrate jenkin with github
+# take jenkins url github > setting >webhook > payload URL > JENKINS_URL/github-webhook
+# content type
+application/json
+# secret
+jenkins > configure > add new token > generate > copy > apply >save > github >secret
+```
+#### 4. jenkins setup with plugin ssh
+```sh
+ Manage plugin > ssh > avaliable > install > restart
+```
+# 5. jenkins project
+```sh
+new_project > free_style > source_code_managment > build trigger > github_hook_trigger_for > buil > send_file_excute_commands_over_SSH
+SAVE
+
+# then 
+manage_jenkins > configure_system > SSH_Server > add > 
+
+
+```
+
+
