@@ -1,6 +1,7 @@
 # Git jenkin ansible pipeline on ec2
 
 ### 1. jenkins install
+##### https://www.jenkins.io/doc/tutorials/tutorial-for-installing-jenkins-on-AWS/
 ```sh
 [ec2-user ~]$ sudo yum upgrade
 [ec2-user ~]$ sudo amazon-linux-extras install java-openjdk11 -y
