@@ -41,7 +41,7 @@ yum install git* -y
 
 
 ```
-### 1. Ansible install
+### 1.A Ansible install
 ```sh
 #update system packages
 sudo yum update
@@ -54,6 +54,21 @@ yum install -y ansible
 #To verify the installation, run:
 ansible --version
 ```
+### 1.B Now connect Ansible server and Webserver
+```sh
+#on ansible server
+#on ansible inventory file we paste webserver private ip
+ec2_user]  vim /etc/ansible/hosts
+
+#insert shift+I
+#green.example.com
+#blue.example.com
+[web]
+webserver_private_ip
+#exit  esc +:wq
+
+```
+
 ##### 1. create ansible password
 ```sh
 #on ansible server
@@ -75,20 +90,7 @@ systemctl restart sshd
 
 ```
 
-#### Now connect Ansible server and Webserver
-```sh
-#on ansible server
-#on ansible inventory file we paste webserver private ip
-ec2_user]  vim /etc/ansible/hosts
 
-#insert shift+I
-#green.example.com
-#blue.example.com
-[web]
-webserver_private_ip
-#exit  esc +:wq
-
-```
 
 ###  1. Webserver install
 ##### https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Tutorials.WebServerDB.CreateWebServer.html
@@ -101,8 +103,10 @@ sudo yum install -y httpd
 sudo systemctl start httpd
 #enable the web_server
 sudo systemctl enable httpd
-#root login in webserver enable
-passwd root
+```
+##### Enable root webserver password
+```sh
+216 ~]# passwd root 
 #then ssh key configration fifle
 vim /etc/ssh/sshd_config
 
