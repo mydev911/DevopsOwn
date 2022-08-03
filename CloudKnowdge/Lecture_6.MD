@@ -41,6 +41,29 @@ yum install git* -y
 
 
 ```
+##### 1. create jenkins password
+```sh
+#on jenkins server
+passwd root
+#then ssh key configration fifle
+
+vim /etc/ssh/sshd_config
+#shift+I
+#LoginGraceTime 2m
+#PermitRootLogin yes
+PermitRootLogin yes
+#To disable tunneled clear text passwords, change to no here!
+#PasswordAuthentication no
+PasswordAuthentication yes
+Exit Esc+:wq
+#resart 
+systemctl restart sshd
+
+
+```
+
+
+
 ### 1.A Ansible install
 ```sh
 #update system packages
