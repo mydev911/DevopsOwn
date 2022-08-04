@@ -3,6 +3,10 @@
 ### 1. jenkins install
 ##### https://www.jenkins.io/doc/tutorials/tutorial-for-installing-jenkins-on-AWS/
 ```sh
+sudo su 
+cd
+190-] yum install java* -y
+#or use below one
 [ec2-user ~]$ sudo yum upgrade
 [ec2-user ~]$ sudo amazon-linux-extras install java-openjdk11 -y
 
@@ -203,13 +207,13 @@ vim palybook.yml
          #exit
          esc+:wq
    ```
-#### 4. git setup
+## 4. git webhook setup with jenkins
 ```sh
 #create new repository
 #create a file name index.html
 
 Now integrate jenkin with github
-# take jenkins url github > setting >webhook > payload URL > JENKINS_URL/github-webhook
+# take jenkins url github > setting >webhook > payload URL > JENKINS_URL/github-webhook/
 # content type
 application/json
 # secret
