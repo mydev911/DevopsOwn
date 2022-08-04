@@ -38,7 +38,7 @@ systemctl start docker
 systemctl enable docker
 ```
 
-#####  1.A Enable root docker password
+###  1.A Enable root  on ansible , jenkins, docker  password
 ```sh
 216 ~]# passwd  
 #then ssh key configration fifle
@@ -77,24 +77,7 @@ exit
 
 ```
 
-##### 1.B create ansible password
-```sh
-#on ansible server
-passwd 
-#then ssh key configration fifle
 
-vim /etc/ssh/sshd_config
-#shift+I
-#LoginGraceTime 2m
-#PermitRootLogin yes
-PermitRootLogin yes
-#To disable tunneled clear text passwords, change to no here!
-#PasswordAuthentication no
-PasswordAuthentication yes
-Exit Esc+:wq
-#resart 
-systemctl restart sshd
-```
 ## 1.on jenkins dashbord
 manage jenkins > magage plugins > avaliable > public over ssh > install.
 #### ansible and jenkins userID, password, ip setup
