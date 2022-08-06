@@ -1,5 +1,6 @@
 ### jenkins install on ec2 
  [ec2-user ~]$ sudo yum update –y
+ https://pkg.jenkins.io/redhat-stable/
  ### Java / jenkins install
  ```sh
  [ec2-user ~]$ sudo yum upgrade
@@ -7,7 +8,7 @@
  
  #install jenkins
 https://pkg.jenkins.io/redhat-stable/
-sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
+sudo sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
  sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
  yum install fontconfig java-11-openjdk
  yum install jenkins
