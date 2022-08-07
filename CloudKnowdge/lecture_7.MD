@@ -136,6 +136,11 @@ vim dockerfile.yml
      shell: docker container run -itd --name cloudknowledge-container -p 9000:80 mydev911/cloudknowledge-job
 
 ```
+#### then
+post_build_actions > send build arfifical > Name > ansible > exce_command 
+```sh
+ansible-playbook /sourcecode/docker.yml
+```
 
 
 
