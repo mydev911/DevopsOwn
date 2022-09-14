@@ -17,5 +17,5 @@ https://www.jenkins.io/download/
   docker images ls
   docker container run -itd -p 8081:8080 jenkins 
   #8081 docker port
-  docker container ls
+  docker cont
   ```
