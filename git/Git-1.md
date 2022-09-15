@@ -21,3 +21,15 @@ git log
   ```
 git log --oneline
   ```
+#### log by filter
+  ```
+git log --grep="commit you want to see"
+  ```
+#### find git log by date
+  ```
+git log --since="09/14/2021"
+  ```  
+#### until for git log
+  ```
+git log --until="01/01/2021"
+  ```
