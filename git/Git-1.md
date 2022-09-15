@@ -33,3 +33,7 @@ git log --since="09/14/2021"
   ```
 git log --until="01/01/2021"
   ```
+#### to create file and write down inside
+  ```
+echo 'file2' > file2.txt
+  ```
