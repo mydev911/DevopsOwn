@@ -13,7 +13,7 @@ git commit -m "commit"
 #### To check log  and hash
 ```
 git log
-git log -oneline
+git log --oneline
 ```
 ### To create branch
 we need hash value
