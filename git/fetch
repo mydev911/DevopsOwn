@@ -1,0 +1,4 @@
+#### Check fetch and push for github
+  ```
+git remote -v
+  ```
