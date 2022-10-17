@@ -4,14 +4,25 @@ https://devconnected.com/create-git-branch/#:~:text=The%20easiest%20way%20to%20c
 #Create 4 file and add this file to stage and commit to local
   ```
 touch file1.txt
+```
+```
+git init
+```
+```
 git add file1.txt
+```
 or 
+```
 git add .
+```
 
 git commit -m "commit"
 
 ```
 #### To check log  and hash
+```
+```
+ls -al .git/
 ```
 git log
 git log --oneline
